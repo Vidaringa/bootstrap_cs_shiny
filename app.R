@@ -27,8 +27,31 @@ ui <- fluidPage(
           a(href = "https://www.business-science.io/", target = "_blank", "Expert shiny application course"),
           "by business science"),
 
+        h2("Table Of Contents"),
+        tags$ul(
+            tags$li("1.0 Bootstrap Grid System") %>% a(href = "#section_1"),
+            tags$li("2.0 Working With Text") %>% a(href = "#section_2"),
+            tags$li("3.0 Text Alignment") %>% a(href = "#section_3"),
+            tags$li("4.0 Lists") %>% a(href = "#section_4"),
+            tags$li("5.0 Contextual Colors & Backgrounds") %>% a(href = "#section_5"),
+            tags$li("6.0 BUTTONS") %>% a(href = "#section_6"),
+            tags$li("7.0 Images") %>% a(href = "#section_7"),
+            tags$li("8.0 Thumbnails") %>% a(href = "#section_8"),
+            tags$li("9.0 Navbars") %>% a(href = "#section_9"),
+            tags$li("10.0. Navs") %>% a(href = "#section_10"),
+            tags$li("11.0 Sidebar Layout") %>% a(href = "#section_11"),
+            tags$li("12.0 Jumbotron") %>% a(href = "#section_12"),
+            tags$li("13.0 Panels") %>% a(href = "#section_13"),
+            tags$li("14.0 Moblie") %>% a(href = "#section_14"),
+            tags$li("15.0 CSS & THEME") %>% a(href = "#section_15"),
+            tags$li("16.0 JAVASCRIPT (ShinyJS)") %>% a(href = "#section_16"),
+
+        ),
+
         # 1.0 BOOTSTRAP GRID SYSTEM ----
+        div(id = "section_1"),
         h2("1.0 Bootstrap Grid System"),
+
         div(
             class = "container, text-center",
             fluidRow(
@@ -66,6 +89,7 @@ ui <- fluidPage(
         hr(),
 
         # 2.0 WORKING WITH TEXT ----
+        div(id = "section_2"),
         h2("2.0 Working With Text"),
 
         p(class = "lead", "Business science Univercity helps us learn Shiny"),
@@ -89,6 +113,7 @@ ui <- fluidPage(
         hr(),
 
         # 3.0 TEXT ALIGNMENT ----
+        div(id = "section_3"),
         h2("3.0 Text Alignment"),
         div(
             class = "container",
@@ -108,6 +133,7 @@ ui <- fluidPage(
             ),
 
         # 4.0 LISTS ----
+        div(id = "section_4"),
         h2("4.0 Lists"),
         tags$ul(
             tags$li("Item 1"),
@@ -136,6 +162,7 @@ ui <- fluidPage(
         hr(),
 
         # 5.0 CONTEXTUAL COLORS & BACKGROUND ----
+        div(id = "section_5"),
         h2("5.0 Contextual Colors & Backgrounds"),
         p(class = "text-primary","Hello R"),
         p(class = "text-success","Hello R"),
@@ -152,6 +179,7 @@ ui <- fluidPage(
         hr(),
 
         # 6.0 BUTTONS ----
+        div(id = "section_6"),
         h2("6.0 BUTTONS"),
         h3("Contextual Buttons"),
 
@@ -192,6 +220,7 @@ ui <- fluidPage(
         hr(),
 
         # 7.0 IMAGES ----
+        div(id = "section_7"),
         h2("7.0 Images"),
         div(
             class = "container",
@@ -218,6 +247,7 @@ ui <- fluidPage(
         hr(),
 
         # 8.0 THUMBNAILS ----
+        div(id = "section_8"),
         h2("8.0 Thumbnails"),
         div(
             column(
@@ -264,6 +294,7 @@ ui <- fluidPage(
         hr(),
 
         # 9.0 NAVBAR ----
+        div(id = "section_9"),
         h2("9.0 Navbars"),
         navbarPage(
             title = "Business Science",
@@ -294,9 +325,9 @@ ui <- fluidPage(
 
         hr(),
 
-        # 10. NAVS ----
-
-        h2("10. Navs"),
+        # 10.0 NAVS ----
+        div(id = "section_10"),
+        h2("10.0 Navs"),
 
         h3("Tabset Panel"),
         tabsetPanel(
@@ -331,8 +362,9 @@ ui <- fluidPage(
             )
         ),
 
-        # 11. Sidebar Layout ----
-        h2("11 Sidebar Layout"),
+        # 11.0 Sidebar Layout ----
+        div(id = "section_11"),
+        h2("11.0 Sidebar Layout"),
         sidebarLayout(
             sidebarPanel = sidebarPanel(
                 width = 4,
@@ -349,8 +381,9 @@ ui <- fluidPage(
 
         hr(),
 
-        # 12 JUMBOTRON ----
-        h2("1 Jumbotron"),
+        # 12.0 JUMBOTRON ----
+        div(id = "section_12"),
+        h2("12.0 Jumbotron"),
         div(
             class = "jumbotron",
             style = "background:url('business-science-logo.png'); background-size:cover;",
@@ -366,8 +399,9 @@ ui <- fluidPage(
 
         hr(),
 
-        # 13 PANELS ----
-        h2("13 Panels"),
+        # 13.0 PANELS ----
+        div(id = "section_13"),
+        h2("13.0 Panels"),
         div(
             class = "panel panel-primary",
             div(
@@ -387,8 +421,9 @@ ui <- fluidPage(
 
         hr(),
 
-        # 14 MOBLIE ----
-        h2("14 Moblie"),
+        # 14.0 MOBLIE ----
+        div(id = "section_14"),
+        h2("14.0 Moblie"),
         fluidRow(
             class = "hidden-xs",
             div(
@@ -411,8 +446,9 @@ ui <- fluidPage(
 
         hr(),
 
-        # 15 CSS & THEMES ----
-        h2("15 CSS & THEME"),
+        # 15.0 CSS & THEMES ----
+        div(id = "section_15"),
+        h2("15.0 CSS & THEME"),
         fluidPage(
             theme = shinytheme("flatly"),
             # themeSelector()
@@ -425,8 +461,9 @@ ui <- fluidPage(
 
         hr(),
 
-        # 16 JAVASCRIPT ----
-        h2("16 JAVASCRIPT (ShinyJS"),
+        # 16.0 JAVASCRIPT ----
+        div(id = "section_16"),
+        h2("16.0 JAVASCRIPT (ShinyJS)"),
         useShinyjs(),
 
         fluidRow(
