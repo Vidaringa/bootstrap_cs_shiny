@@ -5,6 +5,7 @@
 library(shiny)
 library(tidyverse)
 library(plotly)
+library(shinythemes)
 
 # USER INTERFACE ----
 ui <- fluidPage(
@@ -184,6 +185,239 @@ ui <- fluidPage(
             shiny::textOutput(outputId = "btn_1_txt")
         ),
 
+        hr(),
+
+        # 7.0 IMAGES ----
+        h2("7.0 Images"),
+        div(
+            class = "container",
+            column(
+                width = 4,
+                img(class = "thumbnail img-responsive",
+                    src = "business-science-logo.png",
+                    style = "width:200px;")
+                ),
+            column(
+                width = 4,
+                img(class = "img-rounded img-responsive",
+                    src = "matt-pic.jpg",
+                    style = "width:200px;")
+                ),
+            column(
+                width = 4,
+                img(class = "img-circle img-responsive",
+                    src = "matt-pic.jpg",
+                    style = "width:200px;")
+                )
+        ),
+
+        hr(),
+
+        # 8.0 THUMBNAILS ----
+        h2("8.0 Thumbnails"),
+        div(
+            column(
+                width = 4,
+                div(
+                    class = "thumbnail text-center",
+                    # style = "padding: 20px;",
+                    img(
+                        class = "img-rounded img-responseive",
+                        src = "matt-pic.jpg"),
+                    h3("Thumbnail Label"),
+                    p("Text about this thumbnail"),
+                    a(class = "btn btn-primary btn-sm", href = "#", "Learn More")
+                )
+            ),
+            column(
+                width = 4,
+                div(
+                    class = "thumbnail text-center",
+                    # style = "padding: 20px;",
+                    img(
+                        class = "img-rounded img-responseive",
+                        src = "matt-pic.jpg"),
+                    h3("Thumbnail Label"),
+                    p("Text about this thumbnail"),
+                    a(class = "btn btn-primary btn-sm", href = "#", "Learn More")
+                )
+            ),
+            column(
+                width = 4,
+                div(
+                    class = "thumbnail text-center",
+                    # style = "padding: 20px;",
+                    img(
+                        class = "img-rounded img-responseive",
+                        src = "matt-pic.jpg"),
+                    h3("Thumbnail Label"),
+                    p("Text about this thumbnail"),
+                    a(class = "btn btn-primary btn-sm", href = "#", "Learn More")
+                )
+            ),
+        ),
+
+        hr(),
+
+        # 9.0 NAVBAR ----
+        h2("9.0 Navbars"),
+        navbarPage(
+            title = "Business Science",
+            inverse = TRUE,
+            collapsable = TRUE,
+            tabPanel(
+                title = "What is Shiny?",
+                value = "page_1",
+                h1("What is Shiny", tags$small("A framework for building web apps with R")),
+                p("All of the cool features")
+            ),
+            tabPanel(
+                title = "What is Bootstrap",
+                value = "page_2",
+                h1("What is Bootstrap", tags$small("A popular framework")),
+                p("All of the cool features of bootstrap")
+                ),
+
+            navbarMenu(
+                title = "Using Shiny and Bootstrap",
+                tabPanel(title = "Make Plots"),
+                tabPanel(title = "Add Shiny Components"),
+                "----",
+                tabPanel(title = "More Info")
+                )
+        ),
+
+
+        hr(),
+
+        # 10. NAVS ----
+
+        h2("10. Navs"),
+
+        h3("Tabset Panel"),
+        tabsetPanel(
+            id = "tabset_1",
+            type = "tabs",
+            tabPanel(
+                title = "Tab 1",
+                h3("What is Shiny?"),
+                p("Shiny is awesome")
+                ),
+            tabPanel(
+                title = "Tab 2",
+                h3("What is Bootstrap?"),
+                p("Bootstrap is awesome")
+            )
+            ),
+
+        br(),
+
+        h3("Navlist Panel"),
+        navlistPanel(
+            id = "navlist_1",
+            tabPanel(
+                title = "Tab 1",
+                h3("What is Shiny?"),
+                p("Shiny is awesome")
+            ),
+            tabPanel(
+                title = "Tab 2",
+                h3("What is Bootstrap?"),
+                p("Bootstrap is awesome")
+            )
+        ),
+
+        # 11. Sidebar Layout ----
+        h2("11 Sidebar Layout"),
+        sidebarLayout(
+            sidebarPanel = sidebarPanel(
+                width = 4,
+                p("UI Elements Go Here"),
+                dateInput(inputId = "daterange_1",
+                          label = "Enter Date Range")
+            ),
+
+            mainPanel = mainPanel(
+                width = 8,
+                "Plot Elements"
+            )
+        ),
+
+        hr(),
+
+        # 12 JUMBOTRON ----
+        h2("1 Jumbotron"),
+        div(
+            class = "jumbotron",
+            style = "background:url('business-science-logo.png'); background-size:cover;",
+            div(
+                class = "container",
+                style = "background-color:#9999999c;",
+                h1("Learning Shiny"),
+                p("It's your solution for building we application with", code("R")),
+                "Learn more" %>% a(class = "btn btn-lg btn-primary", href = "#") %>% p()
+            ),
+
+        ),
+
+        hr(),
+
+        # 13 PANELS ----
+        h2("13 Panels"),
+        div(
+            class = "panel panel-primary",
+            div(
+                class = "panel-heading",
+                h3("Chart Title - hp against mpg")
+            ),
+            div(
+                class = "panel-body bg-info",
+                p("Inseert Chart"),
+                plotlyOutput(outputId = "plotly_1")
+            ),
+            div(
+                class = "panel-footer",
+                p("Footer") %>% tags$small()
+            )
+        ),
+
+        hr(),
+
+        # 14 MOBLIE ----
+        h2("14 Moblie"),
+        fluidRow(
+            class = "hidden-xs",
+            div(
+                class = "jumbotron",
+                h1("Learning Shiny"),
+                p(class = "lead", "Will help you distribute interactive data products"),
+                a(class = "btn btn-primary btn-lg", href = "#", "Learn more")
+            )
+        ),
+        fluidRow(
+            class = "hidden-sm hidden-md hidden-lg",
+            div(
+                class = "thumbnail text-center",
+                img(class = "img-responsive", style = "width:200px;", src = "business-science-logo.png"),
+                h3("Learning Shiny"),
+                p(class = "lead", "Will help you distribute interactive data products"),
+                a(class = "btn btn-primary btn-sm", href = "#", "Learn more")
+            )
+        ),
+
+        hr(),
+
+        # 15 CSS & THEMES ----
+        h2("15 CSS & THEME"),
+        fluidPage(
+            theme = shinytheme("flatly"),
+            # themeSelector()
+            tags$head(
+               # tags$link(rel = "stylesheet", type = "text/css", href = "bootstrap.min.css"),
+                tags$link(rel = "stylesheet", type = "text/css", href = "my_styles.css"),
+
+            )
+        ),
 
         div(style = "height: 400px;")
 
@@ -195,17 +429,24 @@ ui <- fluidPage(
 server <- function(input, output, session) {
 
     counter <<- 0
-    btn_1_click <- eventReactive(eventExpr = input$btn_1,
-                                 handlerExpr = {
-                                     return(TRUE)
+    btn_1_click <- eventReactive( input$btn_1, {
+                                     TRUE
                                      counter <<- counter + 1
                                      })
 
     output$btn_1_txt <- renderText({
         if(btn_1_click()) {
             str_glue("You clicked my {counter} times!")
-        } else
+        }
 
+    })
+
+    # Plot mtcars
+    output$plotly_1 <- renderPlotly({
+        g <- ggplot(mtcars, aes(x = mpg, y = hp)) +
+            geom_point()
+
+        ggplotly(g)
     })
 
 }
